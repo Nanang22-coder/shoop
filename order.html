@@ -53,61 +53,92 @@
 
 <div id="list" style="margin-top:40px">
   
-  <div class="container-sm nasi">
+  <div class="container-sm ">
 <button type="button" class="btn btn-outline-warning">Pilih Nasi</button>
-<select class="form-select" aria-label="Default select example" style="text-align: center">
-  <option selected value="kuning"> Nasi Kuning </option>
-  <option value="uduk"> Nasi Uduk</option>
-  <option value="Liwet"> Nasi liwet</option>
-  <option value="biasa"> Nasi Biasa</option>
+<select class="form-select " aria-label="Default select example" style="text-align: center">
+  <option selected value="Nasikuning"> Nasi Kuning </option>
+  <option value="NasiUduk"> Nasi Uduk</option>
+  <option value="NasiLiwet"> Nasi liwet</option>
+  <option value="Nasibiasa"> Nasi Biasa</option>
   </select>
 </div>
 
-  <div class="container-sm lauk">
+  <div class="container-sm">
 <button type="button" class="btn btn-outline-danger">Pilih lauk</button>
 <select class="form-select" aria-label="Default select example" style="text-align: center">
-  <option selected value="merah" > Ayam bumbu merah</option>
-  <option value="crispy"> Ayam crispy</option>
-  <option value="kecap">Ayam kecap</option>
+  <option selected value="AyamBumbuMerah" > Ayam bumbu merah</option>
+  <option value="AyamCrispy"> Ayam crispy</option>
+  <option value="AyamKecap">Ayam kecap</option>
 </select>
 </div> 
 
-  <div class="container-sm sayur">
+  <div class="container-sm">
 <button type="button" class="btn btn-outline-success">Pilih Sayur</button>
 <select class="form-select" aria-label="Default select example" style="text-align: center">
-  <option selected value="tempe" > mie dan kering tempe </option>
-  <option value="hati"> mie dan kentang sambal ati</option>
+  <option selected value="KeringTempe" > mie dan kering tempe </option>
+  <option value="SambalHati"> mie dan kentang sambal ati</option>
+  <option value="SayurUrap"> Sayur Urap</option>
 </select>
 </div>
   
-  <div class="container-sm sayur">
+  <div class="container-sm ">
 <button type="button" class="btn btn-outline-info">Porsi</button>
 <select class="form-select porsi" onchange="getharga()" aria-label="Default select example" style="text-align: center">
-  <option selected value="10" > 10 porsi</option>
-  <option value="15">15 porsi</option>
-  <option value="20">20 porsi</option>
-  <option value="25">25 porsi</option>
+  <option selected >pilih jumlah porsi</option>
+  <option value="Porsi10">porsi 10</option>
+  <option value="Porsi15">porsi 15</option>
+  <option value="Porsi20">porsi 20</option>
+  <option value="Porsi25">porsi 25</option>
 </select>
 </div>
 <div id="harga" style="margin-top:30px;">
 <button type="button"  class="btn btn-danger btn-lg" style="margin-left:30px;">Total Harga</button>
-<a href="https://wa.me/6285754597624?text=Join%20swipe%20agent">  
+<a href="#">  
 <button type="button" class="btn btn-primary btn-lg" style="margin-left:30px;">Pesan</button > </a>
 </div>
   
 </div>
 
 <script type="application/javascript">
-function getharga() {
-const porsi= document.querySelector(".porsi")
 
-if(porsi.value === "20") {
-  const harga = document.getElementById("harga")
-  harga.innerHTML = `<button type="button" class="btn btn-danger btn-lg" style="margin-left:30px;">Rp.600.000,00</button>
-<a href="https://wa.me/6285754597624?text=Join%20swipe%20agent">  
-<button type="button" class="btn btn-primary btn-lg" style="margin-left:30px;">Pesan</button > </a>`
+
+ function getharga() {
+  
+const menu = document.querySelectorAll(".form-select")
+const harga = document.getElementById("harga")
+let dataMenu = "pesanan%20masuk%20"
+''
+for(let i = 0 ; i < menu.length; i++) {
+  
+ dataMenu += menu[i].value
+dataMenu += "%20"
+  
 }
+console.log(dataMenu,menu[4].value)
+
+let h = [300,450,600,750,]
+let datas = []
+for(let i = 0; i < h.length; i++) {
+  datas.push(`<button type="button" class="btn btn-danger btn-lg" style="margin-left:30px;">Rp.${h[i]}.000,00</button>
+<a href="https://wa.me/6285754597624?text=${dataMenu}">  
+<button type="button" class="btn btn-primary btn-lg" style="margin-left:30px;">Pesan</button > </a>`)
 }
+console.log(datas)
+
+
+if(menu[4].value === "Porsi15") 
+  harga.innerHTML = datas[1]
+else if(menu[4].value === "Porsi20") 
+  harga.innerHTML = datas[2]
+else if(menu[4].value === "Porsi25") 
+  harga.innerHTML = datas[3]
+else
+  harga.innerHTML = datas[0]
+}
+
+
+
+
 </script>
   
 
