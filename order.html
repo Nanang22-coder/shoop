@@ -11,18 +11,39 @@
     <title>Hello, world!</title>
   </head>
   <body>
-  
-<div class="card" style="width: 18rem;">
-  <img src="images/akta.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<ul class="nav nav-pills">
+  <li class="nav-item " id="home">
+    <a class="nav-link " id="homelink" aria-current="page" href="#">Home</a>
+  </li>
+  <li class="nav-item"  >
+    <a class="nav-link active order" id="order" href="#">order</a>
+  </li>
+
+</ul>
+<div class="container"> 
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" >
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="4000">
+      <img src="images/kentang.jpg" class="d-block w-100" height="200" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="4000">
+      <img src="images/tumpeng.jpg" class="d-block w-100" height="200" alt="...">
+    </div>
+    
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-  
-  
-  
+</div>
+<script type="application/javascript">
+
+</script>
   
 
     <!-- Optional JavaScript; choose one of the two! -->
