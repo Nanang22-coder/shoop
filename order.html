@@ -20,7 +20,7 @@
   </li>
 
 </ul>
-<div class="container"> 
+<div class="container carousel"> 
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" >
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="4000">
@@ -41,8 +41,73 @@
   </button>
 </div>
 </div>
-<script type="application/javascript">
+<div class="container-lg">
+<select class="form-select" aria-label="Default select example" style="text-align: center">
+  <option selected > Silahkan pilih Product</option>
+  <option value="kentang">Kentang Mustofa</option>
+  <option value="tumpeng">Tumpeng</option>
+  
+</select>
+</div>
 
+
+<div id="list" style="margin-top:40px">
+  
+  <div class="container-sm nasi">
+<button type="button" class="btn btn-outline-warning">Pilih Nasi</button>
+<select class="form-select" aria-label="Default select example" style="text-align: center">
+  <option selected value="kuning"> Nasi Kuning </option>
+  <option value="uduk"> Nasi Uduk</option>
+  <option value="Liwet"> Nasi liwet</option>
+  <option value="biasa"> Nasi Biasa</option>
+  </select>
+</div>
+
+  <div class="container-sm lauk">
+<button type="button" class="btn btn-outline-danger">Pilih lauk</button>
+<select class="form-select" aria-label="Default select example" style="text-align: center">
+  <option selected value="merah" > Ayam bumbu merah</option>
+  <option value="crispy"> Ayam crispy</option>
+  <option value="kecap">Ayam kecap</option>
+</select>
+</div> 
+
+  <div class="container-sm sayur">
+<button type="button" class="btn btn-outline-success">Pilih Sayur</button>
+<select class="form-select" aria-label="Default select example" style="text-align: center">
+  <option selected value="tempe" > mie dan kering tempe </option>
+  <option value="hati"> mie dan kentang sambal ati</option>
+</select>
+</div>
+  
+  <div class="container-sm sayur">
+<button type="button" class="btn btn-outline-info">Porsi</button>
+<select class="form-select porsi" onchange="getharga()" aria-label="Default select example" style="text-align: center">
+  <option selected value="10" > 10 porsi</option>
+  <option value="15">15 porsi</option>
+  <option value="20">20 porsi</option>
+  <option value="25">25 porsi</option>
+</select>
+</div>
+<div id="harga" style="margin-top:30px;">
+<button type="button"  class="btn btn-danger btn-lg" style="margin-left:30px;">Total Harga</button>
+<a href="https://wa.me/6285754597624?text=Join%20swipe%20agent">  
+<button type="button" class="btn btn-primary btn-lg" style="margin-left:30px;">Pesan</button > </a>
+</div>
+  
+</div>
+
+<script type="application/javascript">
+function getharga() {
+const porsi= document.querySelector(".porsi")
+
+if(porsi.value === "20") {
+  const harga = document.getElementById("harga")
+  harga.innerHTML = `<button type="button" class="btn btn-danger btn-lg" style="margin-left:30px;">Rp.600.000,00</button>
+<a href="https://wa.me/6285754597624?text=Join%20swipe%20agent">  
+<button type="button" class="btn btn-primary btn-lg" style="margin-left:30px;">Pesan</button > </a>`
+}
+}
 </script>
   
 
